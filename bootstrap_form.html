@@ -1,0 +1,858 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Başvuru</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+
+    <script src="https://kit.fontawesome.com/df4ff89c1f.js" crossorigin="anonymous"></script>
+
+    <script src="session.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/b4fa4513c4.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        var page = 0;
+     
+        function nextPrev(x,y) {
+            console.log(page)
+            page = page + x;
+            if(y >= 0  ){
+                page = y ;
+            }
+            if (page == -1) {
+                page = 0;
+            } else if (page == 5) {
+                page = 4;
+            }
+            if (page == 0) {
+                jQuery("#ogrenciBilgileri").show();
+                jQuery("#konum").hide()
+                jQuery("#egitim").hide()
+                jQuery("#engelilik").hide()
+                jQuery("#submitButton").hide();
+                jQuery("#nextBtn").show();
+
+            } else if (page == 1) {
+                jQuery("#ogrenciBilgileri").hide();
+                jQuery("#konum").show()
+                jQuery("#egitim").hide()
+                jQuery("#engelilik").hide()
+                jQuery("#submitButton").hide();
+                jQuery("#nextBtn").show();
+
+            } else if ((page == 2)) {
+                jQuery("#ogrenciBilgileri").hide();
+                jQuery("#konum").hide()
+                jQuery("#egitim").show()
+                jQuery("#engelilik").hide()
+                jQuery("#submitButton").hide();
+                jQuery("#nextBtn").show();
+
+            } else if (page == 3) {
+                jQuery("#ogrenciBilgileri").hide();
+                jQuery("#konum").hide()
+                jQuery("#egitim").hide()
+                jQuery("#engelilik").show()
+                jQuery("#submitButton").show();
+                jQuery("#nextBtn").hide();
+            }
+        }
+    </script>
+    <title>Khas Erasmus</title>
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {}
+
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+            text-decoration: none;
+            outline: none;
+        }
+
+        a,
+        a:active,
+        a:focus {
+            color: #333;
+            text-decoration: none;
+            transition-timing-function: ease-in-out;
+            -ms-transition-timing-function: ease-in-out;
+            -moz-transition-timing-function: ease-in-out;
+            -webkit-transition-timing-function: ease-in-out;
+            -o-transition-timing-function: ease-in-out;
+            transition-duration: .2s;
+            -ms-transition-duration: .2s;
+            -moz-transition-duration: .2s;
+            -webkit-transition-duration: .2s;
+            -o-transition-duration: .2s;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        section {
+            padding: 60px 0;
+            /* min-height: 100vh;*/
+        }
+
+        .btn {
+            padding: 14px 25px;
+            text-transform: uppercase;
+            -webkit-transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            -o-transition: all 0.8s;
+            transition: all 0.8s;
+        }
+
+        .red-btn {
+            background: #ed1b24;
+            border: 2px solid #ed1b24;
+            color: #fff;
+        }
+
+        .red-btn:hover {
+            background: #1c376c;
+            color: #fff;
+            border-color: #ffffff;
+        }
+
+        /*---------footer---------*/
+        footer {
+            background-color: #222023;
+            background-image: -webkit-linear-gradient(top, #222023, #1e2c47);
+            background-image: -moz-linear-gradient(top, #222023, #1e2c47);
+            background-image: -o-linear-gradient(top, #222023, #1e2c47);
+            background-image: linear-gradient(to bottom, #222023, #1e2c47);
+            color: #fff;
+            padding: 55px 0;
+            font-size: 17px;
+        }
+
+        body {
+            background: #eee
+        }
+
+        #regForm {
+            background-color: #ffffff;
+            margin: 0px auto;
+            font-family: Raleway;
+            padding: 40px;
+            border-radius: 10px
+        }
+
+        #register {
+
+            color: #6A1B9A;
+        }
+
+        h1 {
+            text-align: center
+        }
+
+        input {
+            padding: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-family: Raleway;
+            border: 1px solid #aaaaaa;
+            border-radius: 10px;
+            -webkit-appearance: none;
+        }
+
+
+
+        .tab input:focus {
+
+            border: 1px solid #6a1b9a !important;
+            outline: none;
+        }
+
+        input.invalid {
+
+            border: 1px solid #e03a0666;
+        }
+
+        .tab {
+            display: none
+        }
+
+        button {
+            background-color: #6A1B9A;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px 20px;
+            font-size: 17px;
+            font-family: Raleway;
+            cursor: pointer
+        }
+
+        button:hover {
+            opacity: 0.8
+        }
+
+        button:focus {
+
+            outline: none !important;
+        }
+
+        #prevBtn {
+            background-color: #bbbbbb
+        }
+
+
+        .all-steps {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 100%;
+            display: inline-flex;
+            justify-content: center;
+        }
+
+        .step {
+            height: 40px;
+            width: 40px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            color: #6a1b9a;
+            opacity: 0.5;
+        }
+
+        .step.active {
+            opacity: 1
+        }
+
+
+        .step.finish {
+            color: #fff;
+            background: #6a1b9a;
+            opacity: 1;
+
+        }
+
+
+
+        .all-steps {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px
+        }
+
+        .thanks-message {
+            display: none
+        }
+
+        footer h3 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        footer h4 {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 2px;
+        }
+
+        .about-footer li i {
+            position: absolute;
+            left: 0;
+        }
+
+        .about-footer li {
+            padding-left: 40px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .about-footer ul {
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff;
+        }
+
+        footer a:hover {
+            color: #ed1b24;
+        }
+
+        .footer-title {
+            border-bottom: 2px solid #a61f2d;
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        ul.footer-social {
+            float: right;
+        }
+
+        ul.footer-social li {
+            display: inline;
+            margin-right: 16px;
+        }
+
+        ul.footer-social i {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            color: #222025;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            font-weight: 800;
+        }
+
+        ul.footer-social li:last-child {
+            margin-right: 0px;
+        }
+
+        ul.footer-social i:hover {
+            background: #ed1b24;
+            color: #fff;
+        }
+
+        .page-more-info li {
+            margin-bottom: 31px;
+        }
+
+        footer .table td:first-child {
+            font-weight: 600;
+            padding-left: 33px;
+        }
+
+        footer .table td:last-child {
+            text-align: right;
+        }
+
+        footer .table td {
+            padding: 0px;
+            border: 0;
+        }
+
+        footer .table tr {}
+
+        footer .table td i {
+            position: absolute;
+            left: 0px;
+            font-size: 21px;
+            top: 6px;
+        }
+        .custom-file-button input[type=file] {
+  margin-left: -2px !important;
+}
+
+.custom-file-button input[type=file]::-webkit-file-upload-button {
+  display: none;
+}
+
+.custom-file-button input[type=file]::file-selector-button {
+  display: none;
+}
+
+.custom-file-button:hover label {
+  background-color: #dde0e3;
+  cursor: pointer;
+}
+        footer .table td {
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .footer-logo td {
+            padding-right: 4px !important;
+        }
+
+        .footer-logo td:last-child {
+            padding-right: 0px !important;
+        }
+
+        footer hr {
+            border-color: #9294a0;
+        }
+
+        .footer-bottom p {
+            text-align: left;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+        }
+
+        .open-hours hr {
+            margin: 30px 0;
+        }
+        .step {
+    height: 40px;
+    width: 133px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #004084;
+    opacity: 0.5;
+}
+#register {
+    color: #004084;
+}
+button{
+    color: white;
+    background-color: #004084;
+}
+.site-navbar .site-navigation .site-menu .active > a span{
+            color: white;
+    background-color: #004084;
+        }
+        a:hover {
+    color: #004084 !important;
+    text-decoration: underline;
+}
+
+
+.site-navbar .site-navigation .site-menu > li > a:hover > span{
+    background: #004084;
+}
+
+    </style>
+</head>
+
+<body style="height: 100vh;">
+
+
+    <header class="site-navbar" role="banner" style="position: absolute;">
+
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-white mb-0"><img
+                                src="https://hub.khas.edu.tr/pluginfile.php/1/core_admin/logocompact/300x300/1672907972/khas-logo.png"
+                                style="max-width: 155%;" alt=""></a></h1>
+                </div>
+                <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+
+                        <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                            <li ><a href="index.html"><span>Home</span></a></li>
+                            <li><a href="blog.html"><span>Blog</span></a></li>
+                            <li class="active"><a href="about.html"><span>Application Form</span></a></li>
+                            <li><a href="signup_page.html"><span>Login</span></a></li>
+                            <li><a href="signup_page.html"><span>Sign Up</span></a></li>
+                            <li><a id="logout" href="index.html"><span>Logout</span></a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+
+
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a
+                        href="#" class="site-menu-toggle js-menu-toggle text-white"><span
+                            class="icon-menu h3"></span></a></div>
+
+            </div>
+
+        </div>
+        </div>
+
+    </header>
+
+
+    <div class="hero" style="background-image: url('images/hero_1.jpg'); height: 142vh;">
+        <div class="container mt-5" style="    position: absolute;
+        top: 14%;
+        left: 14%;
+    ">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-md-8">
+                    <form id="regForm" style="opacity: 0.9;">
+                        <h1 id="register">Application Form</h1>
+                        <div class="all-steps" id="all-steps">
+                            <span class="step" onclick="nextPrev(0,0)" style="cursor: pointer;"><a >Student Information</a></span>
+                            <span class="step" onclick="nextPrev(0,1)" style="cursor: pointer;"><a >Communication</a></span>
+                            <span class="step" onclick="nextPrev(0,2)" style="cursor: pointer;"><a>Education</a></span>
+                            <span class="step" onclick="nextPrev(0,3)" style="cursor: pointer;"><a>Disability</a></span>
+                        </div>
+
+                        <div class="tab" id="ogrenciBilgileri" style="display: block;">
+                            <h6>First Name / Surname</h6>
+                            <p>
+                                <input id="name" placeholder="Name/Surname" oninput="this.className = ''" name="fname" required></p>
+                            <h6>Nationality</h6>
+                            <p>
+                                <input id="nat" placeholder="Nationality" oninput="this.className = ''" name="fname"></p>
+                            <h6>Nationality 2</h6>
+                            <p>
+                                <input id="nat2" placeholder="Nationality 2" oninput="this.className = ''" name="fname"></p>
+
+
+                            <h6>Gender</h6>
+                            <p>
+                                <div id="gender" class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">Male</label>
+                                    <input style="    margin-left: 5%;" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                    <label style="    margin-left: 9%;" class="form-check-label" for="flexRadioDefault2">
+                                     Female
+                                    </label>
+                                  </div>
+                        
+                            </p>
+                            <h6>Birth Date</h6>
+                            <p>
+                                <input id="bday" type="date" class="form-control" />
+                            </p>
+
+                            <h6>Upload Document</h6>
+                            
+                                <div class="container py-3" style="padding: 0px;">
+
+                                    <div class="input-group custom-file-button">
+                                      <label class="input-group-text" for="inputGroupFile">CV</label>
+                                      <input id="cvitem" type="file" class="form-control" id="inputGroupFile">
+                                    </div>
+                                  
+                                  </div>
+                            
+                                <div class="container py-3" style="padding: 0px;">
+
+                                    <div class="input-group custom-file-button">
+                                      <label class="input-group-text" for="inputGroupFile">Letter of Intent</label>
+                                      <input id="letitem" type="file" class="form-control" id="inputGroupFile">
+                                    </div>
+                                  
+                                  </div>
+                           
+                               <div class="container py-3" style="padding: 0px;">
+
+                                <div class="input-group custom-file-button">
+                                  <label class="input-group-text" for="inputGroupFile">Passport</label>
+                                  <input id="Passport" type="file" class="form-control" id="inputGroupFile">
+                                </div>
+                              
+                              </div>
+                       
+                           
+                                <div class="container py-3" style="padding: 0px;">
+
+                                    <div class="input-group custom-file-button">
+                                      <label class="input-group-text" for="inputGroupFile">Place of Residence</label>
+                                      <input id="place" type="file" class="form-control" id="inputGroupFile">
+                                    </div>
+                                  
+                                  </div>
+
+                            
+                                <div class="container py-3" style="padding: 0px;">
+
+                                    <div class="input-group custom-file-button">
+                                      <label class="input-group-text" for="inputGroupFile">Diploma/Degree</label>
+                                      <input id="diploma" type="file" class="form-control" id="inputGroupFile">
+                                    </div>
+                                  
+                                  </div>
+                          
+                                <div class="container py-3" style="padding: 0px;">
+
+                                    <div class="input-group custom-file-button">
+                                      <label class="input-group-text" for="inputGroupFile">English Proficiency</label>
+                                      <input id="engilish" type="file" class="form-control" id="inputGroupFile">
+                                    </div>
+                                  
+                                  </div>
+                            
+                        </div>
+                        <div class="tab" id="konum">
+                            <h6>Email</h6>
+                            <p><input id="email" placeholder="xxxx@example.com" oninput="this.className = ''" name="dd"></p>
+                            <h6>Phone</h6>
+                            <p><input id="phone" placeholder="+90(5xx) xxx xx xx" oninput="this.className = ''" name="dd"></p>
+                            <h6>Country</h6>
+                            <p><input id="country" placeholder="Country" oninput="this.className = ''" name="dd"></p>
+                            <h6>Adress</h6>
+                            <p><input id="adress" placeholder="Adress" oninput="this.className = ''" name="dd"></p>
+                            <h6>Postcode</h6>
+                            <p><input placeholder="Postcode" oninput="this.className = ''" name="dd"></p>
+
+
+                        </div>
+
+                        <div class="tab" id="egitim">
+                            <h6>University</h6>
+                            <p><input id="uni" placeholder="University" oninput="this.className = ''" name="uname"></p>
+                            <h6>Department</h6>
+                            <p><input id="depart" placeholder="Department" oninput="this.className = ''" name="uname"></p>
+                            <h6>GPA</h6>
+                            <p><input id="gpa" placeholder="2.00" oninput="this.className = ''" name="uname"></p>
+                            <h6>Graduate Year</h6>
+                            <p>                                <input type="date" class="form-control" />
+                            </p>
+
+                            <p>
+                                <h6>Graduation Status</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected></option>
+                                    <option value="1">Graduate</option>
+                                    <option value="2">Student</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="tab" id="engelilik">
+                            <p>
+                                <h6>Disability Status</h6>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected></option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </p>
+                            <h6>Explanation</h6>
+                            <p><input placeholder="Explanation" oninput="this.className = ''" name="uname"></p>
+
+                            <p>
+
+                        </div>
+
+
+                        <div style="overflow:auto;" id="nextprevious">
+                            <div style="float:right;">
+                                
+                                <button type="button" id="prevBtn" onclick="nextPrev(-1)"><i
+                                        class="fa fa-angle-double-left"></i></button>
+                                <button type="button" id="nextBtn" onclick="nextPrev(1)"><i
+                                        class="fa fa-angle-double-right"></i></button> 
+                                <button style="display: none;     border-radius: 18%; height: 44px;" id="submitButton">Submit</button>   
+                                    
+                                    </div>
+                                        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 about-footer">
+                        <h3>
+                            Communication</h3>
+                        <ul>
+                            <li><a href="tel:(010) 1234 4321"><i class="fas fa-phone fa-flip-horizontal"></i>+90 212 533
+                                    65 32</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i>
+                                Cibali Mah. Kadir Has Cad. 34083 Fatih / İSTANBUL
+                                <br />
+                                <br />danisma@khas.edu.tr
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-lg-2 page-more-info">
+
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 page-more-info">
+
+                    </div>
+                    <div class="col-md-6 col-lg-4 open-hours">
+                        <div class="footer-title">
+                            <h4>Open hours</h4>
+                            <ul class="footer-social">
+                                <li><a href="https://www.facebook.com/Khasedutr/?locale=tr_TR" target="_blank"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://www.instagram.com/khasedutr/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/school/khasedutr/" target="_blank"><i
+                                            class="fab fa-linkedin-in"></i></a></li>
+
+                            </ul>
+                        </div>
+                        <table class="table" style="color : white">
+                            <tbody>
+                                <tr>
+                                    <td><i class="far fa-clock"></i>Monday Thursday</td>
+                                    <td>9:00am - 5:00pm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-clock"></i>Friday</td>
+                                    <td>9:00am - 4:00pm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-clock"></i>Saturday</td>
+                                    <td>9:00am - 1:30pm</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="far fa-clock"></i>Sunday</td>
+                                    <td>9:30am - 12:00pm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <p>© Copyright 2022. All rights reserved.</p>
+
+                    </div>
+                    <div class="col-sm-8">
+                        <a href="https://www.khas.edu.tr/kvkk-aydinlatma-metni/" style="float: right;">Privacy
+                            policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        checkLogin();
+    </script>
+    <script src="https://kit.fontawesome.com/b4fa4513c4.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        var loginControl = sessionStorage.getItem("isLogin");
+        if(loginControl == null){
+            document.location.href = document.location.href.replace("bootstrap_form.html","signin_page.html")
+        }
+        var kullanici = sessionStorage.getItem("user");
+        kullanici = kullanici.split(",");
+       
+
+        if (loginControl == "true" ) {
+            jQuery(".site-menu li:eq(3)").remove()
+            jQuery(".site-menu li:eq(3)").text(kullanici[0])
+        
+        }else{
+            document.location.href = document.location.href.replace("bootstrap_form.html","signin_page.html")
+        }
+
+
+        jQuery("#submitButton").click(function(){
+            control()
+        })
+
+
+
+        function control(){
+	var control = false;
+	var arr =[];
+
+
+	if(jQuery("#name").val().length <3){
+		arr.push("name")	
+	}
+	if(jQuery("#nat").val().length <3){
+		arr.push("nationality")	
+	}
+	if(jQuery("#bday").val().length <3){
+		arr.push("birtday")	
+	}
+	if(jQuery("#cvitem").val().length <3){
+		arr.push("CV")	
+	}
+	if(jQuery("#letitem").val().length <3){
+		arr.push("Letter of Intent")	
+	}
+	if(jQuery("#Passport").val().length <3){
+		arr.push("Passport")	
+	}
+	if(jQuery("#diploma").val().length <3){
+		arr.push("Diploma")	
+	}
+	if(jQuery("#place").val().length <3){
+		arr.push("Place of Residence")	
+	}
+	if(jQuery("#engilish").val().length <3){
+		arr.push("English Proficiency")	
+	}
+	if(jQuery("#email").val().length < 3 || jQuery("#email").val().indexOf("@") == -1 ){
+		arr.push("email")	
+	}
+	if(jQuery("#phone").val().length <6){
+		arr.push("phone")	
+	}
+	if(jQuery("#country").val().length <6){
+		arr.push("country")	
+	}
+	if(jQuery("#adress").val().length <6){
+		arr.push("adress")	
+	}
+	if(jQuery("#uni").val().length <6){
+		arr.push("University")	
+	}
+	if(jQuery("#depart").val().length <6){
+		arr.push("Department")	
+	}
+	if(jQuery("#gpa").val().length <6){
+		arr.push("GPA")	
+	}
+	var text = "Please check your";
+	for(var i = 0 ; i < arr.length; i ++){
+		text += " ," + arr[i] 
+	}
+    alert(text)
+}
+    </script>
+</body>
+
+</html>
